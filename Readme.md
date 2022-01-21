@@ -14,6 +14,7 @@ Inspired by ninite on windows and for a personal necesities i made this tool for
 |Gimp|image editor open source|
 |Git|software version control|
 |Inkscape|open source vector graphics editor |
+|Oh my bash|framework for bash| 
 |Openvpn|a VPN |
 |Qbittorrent|P2P Multiplattform client|
 |Slack|messaging app for busisness|
@@ -26,11 +27,19 @@ Inspired by ninite on windows and for a personal necesities i made this tool for
 
  1. Clone the repo or download the .sh file
  2. Open a terminal and run the script as root
->     sudo ./batchInstall.sh
+
+```
+sudo ./batchInstall.sh
+```
+
  3. Choose an option: Install all software or select what will be installed
 
-## SNAPSHOTS
+## FASTEST WAY
+```
+curl -s https://raw.githubusercontent.com/frankietoledo/batchInstallTool/master/batchInstall.sh | sudo bash -s
+```
 
+## SNAPSHOTS
 ![enter image description here](assets/screenshot01.png)
 ![enter image description here](assets/screenshot02.png)
 ![enter image description here](assets/screenshot03.png)

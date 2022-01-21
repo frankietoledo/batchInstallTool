@@ -19,6 +19,7 @@ declare -a arrayOptions=("Anydesk" ".remote access tool" OFF
     "Gimp" ".image editor open source" OFF 
     "Git" ".software version control" OFF 
     "Inkscape" ".open source vector graphics editor " OFF 
+    "Oh-my-bash" ". framework for bash" OFF 
     "Openvpn" ".a VPN " OFF 
     "Qbittorrent" ".P2P Multiplattform client" OFF 
     "Slack" ".messaging app for busisness" OFF 
@@ -68,6 +69,9 @@ function getOnlyKeys(){
 
 #Run the proper instalation of the software
 function runInstalation(){
+  
+  bOhMyBash=false
+
   for pkg in ${pkgs[@]}; do
         printf "[Info] Installing %s \n" $pkg
         case $pkg in
@@ -105,6 +109,10 @@ function runInstalation(){
           (*"Inkscape"*)
             apt-get install -y inkscape
           ;;
+          (*"Oh-my-bash"*)
+            #Because oh my bash installation kill the session and restart him i moved to the end of procedure
+            $bOhMyBash=true
+            ;;
           (*"Openvpn"*)
             apt-get -y install openvpn
           ;;
@@ -116,6 +124,7 @@ function runInstalation(){
           (*"Steam"*)
             wget -nc https://steamcdn-a.akamaihd.net/client/installer/steam.deb
             apt install -y ./steam.deb
+            rm ./steam.deb
           ;;
           (*"Telegram"*)
             snap install telegram-desktop
@@ -143,6 +152,11 @@ function runInstalation(){
         esac
     printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
   done
+
+  if [[ $bOhMyBash ]]; then
+    bash -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+  fi
+
 }
 
 ####---------------------------------------SCREENS-----------------------------------------------------
