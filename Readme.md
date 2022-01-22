@@ -10,6 +10,7 @@ Inspired by ninite on windows and for a personal necesities i made this tool for
 |Blender|3d modeling suite|
 |Chrome|web browser|
 |Discord|gaming community software. Calls and more|
+|Draw.io|diagramming application|
 |Flameshot|capture tool|
 |Gimp|image editor open source|
 |Git|software version control|
@@ -23,26 +24,28 @@ Inspired by ninite on windows and for a personal necesities i made this tool for
 |VsCode|visual studio code - code editor|
 |Zoom|video conferences app|
 
+
+## FASTEST WAY
+```
+curl -s https://raw.githubusercontent.com/frankietoledo/batchInstallTool/master/app.sh | sudo bash -s
+```
 ## USAGE
 
  1. Clone the repo or download the .sh file
  2. Open a terminal and run the script as root
 
 ```
-sudo ./batchInstall.sh
+sudo ./app.sh
 ```
 
  3. Choose an option: Install all software or select what will be installed
-
-## FASTEST WAY
-```
-curl -s https://raw.githubusercontent.com/frankietoledo/batchInstallTool/master/batchInstall.sh | sudo bash -s
-```
+ 4. Now edit sudoers and configure it's possible, add your user to use sudo without password
 
 ## SNAPSHOTS
 ![enter image description here](assets/screenshot01.png)
 ![enter image description here](assets/screenshot02.png)
 ![enter image description here](assets/screenshot03.png)
+![enter image description here](assets/screenshot04.png)
 
 ## CONTACT ME
 |[![Twitter Logo](assets/twitter.png)](https://twitter.com/frankie_toledo)|[![LinkedIn Logo](assets/linkedin.png)](https://www.linkedin.com/in/frankie-toledo/)|
