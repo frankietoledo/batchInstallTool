@@ -188,12 +188,12 @@ function screenSelectSoft(){
 #-----------------------------------------MAIN-----------------------------------------------------#
 ##Main structure
 while [[ true ]]; do
-  ImenuResult=$(whiptail --title "$TITLE" --menu "Choose an option" 15 60 5 \
+  ImenuResult=$(whiptail --title "$TITLE" --menu "Choose an option" 15 60 4 \
       "1" "Install all software" \
       "2" "Select software" \
       "3" "Sudo without password" \
       "4" "Exit" \
-      "5" "gauge" 3>&1 1>&2 2>&3 )
+      3>&1 1>&2 2>&3 )
   [[ $? = 1 ]] && exit;
   case "$ImenuResult" in
   1)
