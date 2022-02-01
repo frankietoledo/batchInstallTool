@@ -27,7 +27,7 @@ Inspired by ninite on windows and for a personal necesities i made this tool for
 
 ## FASTEST WAY
 ```
-curl -s https://raw.githubusercontent.com/frankietoledo/batchInstallTool/master/app.sh | sudo bash -s
+curl -s https://raw.githubusercontent.com/frankietoledo/    InstallTool/master/app.sh | sudo bash -s
 ```
 ## USAGE
 
