@@ -87,7 +87,8 @@ function waitForKey(){
 
 #Run the proper instalation of the softwarefunction runInstalation(){
 
-
+function runInstalation(){
+  
   bOhMyBash= false
   for (( c=0; c<   ${#pkgs[@]}; c++)) 
   {
