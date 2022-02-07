@@ -89,7 +89,7 @@ function waitForKey(){
 
 function runInstalation(){
   
-  bOhMyBash= false
+  bOhMyBash=false
   for (( c=0; c<   ${#pkgs[@]}; c++)) 
   {
     printf "%40s\n" "${BLUE} Working on ${pkgs[$c]} - ${MAGENTA}step [$(expr $c + 1)/${#pkgs[@]}]. ${NORMAL}"
@@ -133,7 +133,7 @@ function runInstalation(){
       ;;
       (*"Oh-my-bash"*)
         #Because oh my bash installation kill the session and restart him i moved to the end of procedure
-        bOhMyBash= true
+        bOhMyBash=true
         ;;
       (*"Openvpn"*)
         apt-get -y install openvpn
@@ -174,7 +174,9 @@ function runInstalation(){
     esac
     printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -}
   }
-  if [[ $bOhMyBash == true ]]; then
+
+  if $bOhMyBash; then
+    printf "%40s\n" "${BLUE}[Extra step] ${NORMAL} - Working on ${CYAN} Oh my bash \n"
     bash -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
   fi
 
@@ -226,9 +228,9 @@ while [[ true ]]; do
       screenSelectSoft
       ;;
   3)
-      sUser=$(who -m | awk '{print $1}')
+      [ $SUDO_USER ] && sUser=$SUDO_USER || sUser=`whoami`
       if whiptail --title "$TITLE" --yesno "Add your user ($sUser) to visudo with no password option?" 8 80; then
-        echo "$sUser ALL=(ALL) NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
+        echo "$sUser ALL=(ALL) NOPASSWD:ALL" | sudo EDITOR='tee -a' visudo
       fi
       ;;
   4)
