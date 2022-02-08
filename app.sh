@@ -36,6 +36,7 @@ declare -a arrayOptions=("Anydesk" ".remote access tool" OFF
     "Blender" ".3d modeling suite" OFF 
     "Chrome" ".web browser" OFF 
     "Discord" ".gaming community software. Calls and more" OFF 
+    "Docker" ".conteiners platform" OFF
     "Draw-io" ".diagramming application" OFF
     "Flameshot" ".capture tool" OFF 
     "Gimp" ".image editor open source" OFF 
@@ -47,6 +48,7 @@ declare -a arrayOptions=("Anydesk" ".remote access tool" OFF
     "Slack" ".messaging app for busisness" OFF 
     "Steam" ".gamming platform" OFF 
     "Telegram" ".messaging app" OFF 
+    "Tmux" ".terminal multiplexor" OFF
     "VsCode" ".visual studio code - code editor" OFF 
     "Zoom" ".video conferences app" OFF 
 )
@@ -116,6 +118,16 @@ function runInstalation(){
         apt install -y ./discord*.deb
         rm ./discord*.deb
       ;;
+      (*"Docker"*)
+        apt install -y apt-transport-https ca-certificates curl software-properties-common
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+        apt update
+
+        apt install -y docker-ce
+        #Using docker command without sudo
+        sudo usermod -aG docker ${USER}
+      ;;
       (*"Draw-io"*)
         snap install drawio
       ;;
@@ -149,6 +161,9 @@ function runInstalation(){
       ;;
       (*"Telegram"*)
         snap install telegram-desktop
+      ;;
+      (*"Tmux"*)
+        apt-get -y install tmux
       ;;
       (*"Qbittorrent"*)
         apt-get install -y qbittorrent
