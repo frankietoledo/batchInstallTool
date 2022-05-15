@@ -1,6 +1,8 @@
 # ABOUT
 Inspired by ninite on windows and for a personal necesities i made this tool for install unantended software selection.This is a weekend project and can be re-used for free or can send yours PR. *Pourly tested on Kubuntu 20.04LTS 😅*
 
+Please install snapd without it you can't install Draw.io, Slack, or Telegram.
+
 ## SOFTWARE INCLUDED
 
 | Software | Description |
